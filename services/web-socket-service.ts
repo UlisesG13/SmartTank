@@ -3,16 +3,13 @@ import { Subject, BehaviorSubject, Observable } from 'rxjs';
 
 // Define the SensorMessage interface if not already defined elsewhere
 export interface SensorMessage {
-  // Define the expected properties, e.g.:
-  // id: string;
-  // value: number;
-  // timestamp: string;
-  // Add more fields as needed based on your backend data
-  [key: string]: any;
+  sensor: string;
+  data: { [key: string]: any };
+  date: string; // ISO string, adjust parsing if needed
 }
 
 
-const WS_URL = 'localhost'; // Backend WebSocket URL
+const WS_URL = 'http://127.0.0.1:8000'; // Backend WebSocket URL
 
 @Injectable({
   providedIn: 'root'
