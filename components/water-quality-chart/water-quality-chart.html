@@ -1,0 +1,99 @@
+<div class="water-quality-dashboard">
+  <!-- Header -->
+  <div class="dashboard-header">
+    <h1>Informes de calidad del agua</h1>
+    <p>Evalúa la eficacia de tu purificación de agua</p>
+  </div>
+
+  <!-- Chart Container -->
+  <div class="chart-container">
+    <div class="chart-header">
+      <h3>CALIDAD DEL AGUA</h3>
+      <div class="chart-legend">
+        <span class="legend-item">
+          <span class="legend-color"></span>
+          LOREM
+        </span>
+      </div>
+    </div>
+    <div class="chart-content">
+      <canvas #chartCanvas></canvas>
+    </div>
+  </div>
+
+  <!-- Metrics Grid -->
+  <div class="metrics-grid">
+    <!-- Alertas y notificaciones -->
+    <div class="metric-card">
+      <div class="metric-header">
+        <h4>Alertas y notificaciones</h4>
+      </div>
+      <div class="metric-content">
+        <div class="metric-value">
+          <span class="percentage">{{ alertsPercentage }}%</span>
+          <span class="trend-icon" [style.color]="getTrendColor()">
+            {{ alertsPercentage > 20 ? '↗' : '↗' }}
+          </span>
+        </div>
+        <p class="metric-description">
+          Lorem ipsum dolor sit amet consectetur adipiscing elit. 
+          Dolor sit amet consectetur adipiscing elit quique faucibus.
+        </p>
+      </div>
+    </div>
+
+    <!-- Lost deals -->
+    <div class="metric-card">
+      <div class="metric-header">
+        <h4>Lost deals</h4>
+      </div>
+      <div class="metric-content">
+        <div class="metric-value">
+          <span class="percentage">{{ lostDealsPercentage }}%</span>
+        </div>
+        <p class="metric-description">
+          Lorem ipsum dolor sit amet consectetur adipiscing elit. 
+          Dolor sit amet consectetur adipiscing elit quique faucibus.
+        </p>
+      </div>
+    </div>
+
+    <!-- Calidad del agua -->
+    <div class="metric-card quality-card">
+      <div class="metric-header">
+        <h4>Calidad del agua</h4>
+      </div>
+      <div class="metric-content">
+        <div class="quality-chart">
+          <div class="circular-progress">
+            <svg class="progress-ring" width="120" height="120">
+              <circle class="progress-ring-circle-bg" 
+                      stroke="#f3f4f6" 
+                      stroke-width="8" 
+                      fill="transparent" 
+                      r="52" 
+                      cx="60" 
+                      cy="60"/>
+              <circle class="progress-ring-circle" 
+                      stroke="#f59e0b" 
+                      stroke-width="8" 
+                      fill="transparent" 
+                      r="52" 
+                      cx="60" 
+                      cy="60"
+                      stroke-dasharray="326.73"
+                      [attr.stroke-dashoffset]="getStrokeDashoffset()"
+                      stroke-linecap="round"/>
+            </svg>
+            <div class="progress-text">
+              <span class="percentage">{{ waterQualityPercentage }}%</span>
+            </div>
+          </div>
+        </div>
+        <p class="metric-description">
+          Lorem ipsum dolor sit amet consectetur adipiscing elit.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

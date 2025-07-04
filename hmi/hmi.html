@@ -1,0 +1,33 @@
+
+<div class="hmi-layout">
+  <!-- Tanque -->
+  <div class="tanque">
+    <div class="agua" [style.height.%]="nivelAgua"></div>
+    <div class="nivel-label">{{ nivelAgua }}%</div>
+  </div>
+
+  <!-- Flujo de agua visual -->
+  <div class="flujo-agua" [class.activo]="nivelAgua > 0"></div>
+
+  <!-- Panel sensores -->
+  <div class="panel-sensores">
+    <div class="sensor" [class.alarma]="ph < 6 || ph > 8">
+      <span>pH: {{ ph }}</span>
+    </div>
+    <div class="sensor" [class.alarma]="turbidez > 7">
+      <span>Turbidez: {{ turbidez }}</span>
+    </div>
+    <div class="sensor" [class.alarma]="conductividad > 1200">
+      <span>Conductividad: {{ conductividad }} µS</span>
+    </div>
+  </div>
+
+  <!-- Bomba dosificadora -->
+  <div class="bomba" [class.activa]="bombaActiva">
+    <div class="bomba-cuerpo"></div>
+    <span>{{ bombaActiva ? 'BOMBA ACTIVADA' : 'BOMBA INACTIVA' }}</span>
+  </div>
+
+  <!-- Flujo de purificador -->
+  <div class="flujo-purificador" *ngIf="bombaActiva"></div>
+</div>

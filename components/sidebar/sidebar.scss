@@ -1,0 +1,33 @@
+// variables
+$sidebar-width-expanded: 280px;
+$sidebar-width-collapsed: 80px;
+$primary-color: #3b82f6;
+$text-primary: #1f2937;
+$text-secondary: #6b7280;
+$background-gray: #f8fafc;
+$white: #ffffff;
+
+.sidebar {
+  width: $sidebar-width-expanded;
+  height: 100vh;
+  background: $white;
+  border-right: 1px solid #e5e7eb;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+  transition: width 0.3s ease;
+  position: fixed;
+  overflow: hidden;
+
+  &.collapsed {
+    width: $sidebar-width-collapsed;
+
+    .nav-text, .user-info span, .footer-actions span {
+      opacity: 0;
+      width: 0;
+    }
+    .search-input input {
+      opacity: 0;
+      width: 0;
+    }
+  }
+
+}

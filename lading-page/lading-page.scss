@@ -1,0 +1,284 @@
+$azul: #2563eb;
+$naranja: #f97316;
+$grisClaro: #f8fafc;
+$grisMedio: #6b7280;
+$negro: #1f2937;
+
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+.encabezado {
+  background: white;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  padding: 1rem 2rem;
+
+  .contenedor {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    height: 40px;
+  }
+
+  .navegacion {
+    display: flex;
+    gap: 1.5rem;
+
+    a {
+      text-decoration: none;
+      color: $negro;
+      font-weight: 500;
+      transition: color 0.3s;
+
+      &.naranja {
+        color: $naranja;
+      }
+
+      &:hover {
+        color: $azul;
+      }
+    }
+  }
+}
+
+// HERO
+.hero {
+  background: url('https://www.tecnologiahorticola.com/wp-content/uploads/2024/04/robert-anderson-aJ-UU_9F9ko-unsplash-2048x1365-1-1280x640.jpg') center/cover no-repeat;
+  height: 60vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  .overlay {
+    background-color: rgba(0,0,0,0.3);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+    h1 {
+      color: white;
+      font-size: 48px;
+      font-weight: bold;
+      margin-left: 100px;
+    }
+  }
+}
+
+// VIAJE
+.viaje {
+  text-align: center;
+  padding: 80px 20px;
+
+  h2 {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    color: $grisMedio;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+}
+
+// IMAGEN CENTRAL
+.imagen-central {
+  text-align: center;
+  padding: 40px 0;
+
+  img {
+    width: 500px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  }
+}
+
+// ESTADÍSTICAS
+.estadisticas {
+  background-color: $grisClaro;
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+  padding: 60px 20px;
+  text-align: center;
+
+  .columna {
+    h3 {
+      font-size: 32px;
+      font-weight: bold;
+    }
+
+    p {
+      color: $grisMedio;
+      margin-top: 0.5rem;
+    }
+  }
+}
+
+// EQUIPO
+.equipo {
+  text-align: center;
+  background: white;
+  padding: 80px 20px;
+
+  h2 {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    color: $grisMedio;
+    margin-bottom: 2rem;
+  }
+
+  .grid-equipo {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    justify-items: center;
+
+    .tarjeta {
+      position: relative;
+      overflow: hidden;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: scale(1.03);
+      }
+
+      img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      .overlay {
+        position: absolute;
+        bottom: 0;
+        background: $azul;
+        color: white;
+        width: 100%;
+        padding: 10px;
+        text-align: center;
+
+        h4 {
+          margin: 0;
+          font-weight: bold;
+        }
+
+        span {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
+
+// FOOTER
+.pie {
+  background: white;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 60px 20px;
+  gap: 2rem;
+
+  .columna {
+    max-width: 300px;
+
+    h4 {
+      color: $azul;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      color: $negro;
+      margin-bottom: 1rem;
+    }
+
+    .logo-footer {
+      width: 100px;
+      margin-top: 1rem;
+    }
+  }
+
+  .newsletter {
+    input {
+      width: 100%;
+      padding: 0.5rem;
+      border: 1px solid $grisMedio;
+      margin-bottom: 1rem;
+      border-radius: 4px;
+    }
+
+    button {
+      background: $naranja;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+
+      &:hover {
+        background: darken($naranja, 10%);
+      }
+    }
+
+    .social-icons {
+      margin-top: 1rem;
+      display: flex;
+      gap: 1rem;
+      font-size: 1.5rem;
+
+      i {
+        color: $negro;
+        cursor: pointer;
+
+        &:hover {
+          color: $azul;
+        }
+      }
+    }
+  }
+}
+
+// RESPONSIVE
+@media (max-width: 768px) {
+  .encabezado .navegacion {
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.5rem;
+  }
+
+  .hero .overlay h1 {
+    font-size: 32px;
+    margin-left: 30px;
+  }
+
+  .imagen-central img {
+    width: 90%;
+  }
+
+  .estadisticas {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .pie {
+    flex-direction: column;
+    align-items: center;
+  }
+}
