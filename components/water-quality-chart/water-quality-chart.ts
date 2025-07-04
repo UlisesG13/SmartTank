@@ -14,7 +14,8 @@ interface WaterSensorData {
   }
 @Component({
   selector: 'app-water-quality-chart',
-  imports: [CommonModule],
+  standalone: true,
+  imports: [CommonModule], 
   templateUrl: './water-quality-chart.html',
   styleUrl: './water-quality-chart.scss'
 })

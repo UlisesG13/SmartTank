@@ -1,0 +1,62 @@
+<div class="water-quality-dashboard">
+  <!-- Header -->
+  <div class="header">
+    <h1>Informes de calidad del agua</h1>
+    <p class="subtitle">Evalúa la eficacia de tu purificación de agua</p>
+  </div>
+
+  <!-- Main Chart -->
+  <div class="chart-container">
+    <div class="chart-header">
+      <span class="chart-title">CHART TEXT</span>
+      <span class="chart-subtitle">IPSUM</span>
+    </div>
+    <div class="chart-wrapper">
+      <canvas #chartCanvas></canvas>
+    </div>
+  </div>
+
+  <!-- Metrics Cards -->
+  <div class="metrics-grid">
+    <!-- Alertas y notificaciones -->
+    <div class="metric-card">
+      <h3>Alertas y notificaciones</h3>
+      <div class="metric-value">
+        <span class="value">{{ alerts }}%</span>
+        <span class="trend" [style.color]="getTrendColor()">{{ getTrendIcon() }}</span>
+      </div>
+      <p class="metric-description">
+        Lorem ipsum dolor sit amet consectetur adipiscing elit. 
+        Dolor sit amet consectetur adipiscing elit quisque 
+        faucibus.
+      </p>
+    </div>
+
+    <!-- Lost deals -->
+    <div class="metric-card">
+      <h3>Lost deals</h3>
+      <div class="metric-value">
+        <span class="value">{{ lostDeals }}%</span>
+      </div>
+      <p class="metric-description">
+        Lorem ipsum dolor sit amet consectetur adipiscing elit. 
+        Dolor sit amet consectetur adipiscing elit quisque 
+        faucibus.
+      </p>
+    </div>
+
+    <!-- Calidad del agua -->
+    <div class="metric-card quality-card">
+      <h3>Calidad del agua</h3>
+      <div class="quality-chart-container">
+        <canvas #qualityCanvas></canvas>
+        <div class="quality-percentage">
+          <span class="quality-value">{{ waterQuality }}%</span>
+        </div>
+      </div>
+      <p class="metric-description">
+        Lorem ipsum dolor sit amet consectetur adipiscing elit.
+      </p>
+    </div>
+  </div>
+</div>

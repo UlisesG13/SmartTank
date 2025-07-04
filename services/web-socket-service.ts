@@ -9,7 +9,7 @@ export interface SensorMessage {
 }
 
 
-const WS_URL = 'http://127.0.0.1:8000'; // Backend WebSocket URL
+const WS_URL = 'ws://localhost:8000/sensors/ws'; // Backend WebSocket URL
 
 @Injectable({
   providedIn: 'root'

@@ -1,0 +1,190 @@
+.water-quality-dashboard {
+  padding: 2rem;
+  background-color: #f8fafc;
+  min-height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+.header {
+  margin-bottom: 2rem;
+
+  h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 0 0 0.5rem 0;
+  }
+
+  .subtitle {
+    font-size: 1.1rem;
+    color: #64748b;
+    margin: 0;
+  }
+}
+
+.chart-container {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  margin-bottom: 2rem;
+
+  .chart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+
+    .chart-title {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: #374151;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .chart-subtitle {
+      font-size: 0.875rem;
+      color: #9ca3af;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+  }
+
+  .chart-wrapper {
+    height: 300px;
+    position: relative;
+  }
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.metric-card {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  transition: transform 0.2s ease-in-out;
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+
+  h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #374151;
+    margin: 0 0 1rem 0;
+  }
+
+  .metric-value {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+
+    .value {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #1e293b;
+    }
+
+    .trend {
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+  }
+
+  .metric-description {
+    font-size: 0.875rem;
+    color: #64748b;
+    line-height: 1.6;
+    margin: 0;
+  }
+}
+
+.quality-card {
+  .quality-chart-container {
+    position: relative;
+    height: 150px;
+    width: 150px;
+    margin: 1rem auto;
+
+    canvas {
+      height: 100% !important;
+      width: 100% !important;
+    }
+
+    .quality-percentage {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+
+      .quality-value {
+        font-size: 1.875rem;
+        font-weight: 700;
+        color: #1e293b;
+      }
+    }
+  }
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+  .water-quality-dashboard {
+    padding: 1rem;
+  }
+
+  .header {
+    h1 {
+      font-size: 2rem;
+    }
+  }
+
+  .metrics-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .metric-card {
+    padding: 1.5rem;
+  }
+
+  .chart-container {
+    padding: 1.5rem;
+
+    .chart-wrapper {
+      height: 250px;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .water-quality-dashboard {
+    padding: 0.5rem;
+  }
+
+  .header {
+    h1 {
+      font-size: 1.75rem;
+    }
+    
+    .subtitle {
+      font-size: 1rem;
+    }
+  }
+
+  .chart-container {
+    padding: 1rem;
+  }
+
+  .metric-card {
+    padding: 1rem;
+  }
+}
